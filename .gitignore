@@ -1,0 +1,4 @@
+obj/
+bin/
+.vscode/
+ConnectionString.fs
