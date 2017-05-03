@@ -129,7 +129,7 @@
             | 0 -> "No dice"
             | _ -> n.ToString()
 
-        let getEmployeesHander =
+        let getEmployeesHandler =
             getNEmployees 20 
             |> Seq.toList 
             |> Inference.Json.serialize 
@@ -152,7 +152,7 @@
             choose [
                 GET >=> choose [
                     path "/" >=> OK "Hello World"
-                    path "/employees" >=> getEmployeesHander
+                    path "/employees" >=> getEmployeesHandler
                     pathScan "/employees/%d" getEmployeeByIdHandler
                 ]
                 POST  >=> path "/employees" >=> request postEmployeeHandler
